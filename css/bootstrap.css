@@ -136,7 +136,8 @@ body {
   font-size: 13px;
   line-height: 18px;
   color: #555555;
-  background-color: #ededed;
+/*  background-color: #ededed; */
+  background: url(../img/bg.png) repeat;
 }
 a {
   color: #366ddc;
