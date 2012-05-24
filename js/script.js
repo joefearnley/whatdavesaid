@@ -2,7 +2,7 @@
  * Author: Joe Fearnley
  */
 $(document).ready(function() {
-  $(".btn").click(function() {
+  $(".clip").click(function() {
     var element = $(this);
     var icon = element.children("i");
     icon.removeClass("icon-play").addClass("icon-pause");
