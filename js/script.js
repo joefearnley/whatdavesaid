@@ -18,7 +18,7 @@ $(document).ready(function() {
 
     player.jPlayer("play");
     icon.removeClass("icon-pause").addClass("icon-play");
-  });
 
-  return false;
+    return false;
+  });
 });
