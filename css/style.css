@@ -3,6 +3,11 @@
  * Author:
    ========================================================================== */
 
+body {
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+
 #title {
   font-size: 25px;
   text-align: center;
