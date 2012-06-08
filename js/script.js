@@ -8,7 +8,7 @@ $(document).ready(function() {
     icon.removeClass("icon-play").addClass("icon-pause");
 
     var player = $("#player").jPlayer({
-      swfPath: "jplayer",
+      swfPath: "js/jplayer",
       supplied: "mp3",
     });
 
