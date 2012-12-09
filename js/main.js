@@ -1,11 +1,8 @@
-/*
- * Author: Joe Fearnley
- */
 $(document).ready(function() {
 
     var player = $("#player").jPlayer({
       preload: "auto",
-      swfPath: "js/jplayer",
+      swfPath: "swf",
       supplied: "mp3",
       solution:"flash,html",
     /*
@@ -43,3 +40,4 @@ $(document).ready(function() {
     //return false;
   });
 });
+
