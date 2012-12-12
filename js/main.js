@@ -6,25 +6,77 @@ $(document).ready(function() {
   });
 
   var ClipList = Backbone.Collection.extend({
+
+  });
+
+  var ClipView = Backbone.View.extend({
   });
 
   var clips = [
-    { "wheres-the-buffet", "Where's the Buffet?" },
-    { "hot-damn", "Hot Damn" },
-    { "pansy-immune-system", "Pansy Immune System" },
-    { "upper-football", "Upper Football" },
-    { "william-butterfield", "William Butterfield" },
-    { "smooth-as-silk", "Smooth as Silk" },
-    { "black-metal", "Black Metal" },
-    { "large-can-of-beer", "Large Can of Beer" },
-    { "bought-a-new-part", "Bought a New Part" },
-    { "who-is-this", "Who is this?" },
-    { "futons-instead-of-pews", "Futons Instead of Pews" },
-    { "challenge-to-a-duel", "Challenge to a Dual" },
-    { "hahaha","Hahahaha," },
-    { "where-you-going", "Where You Going?" },
-    { "pessimistic", "Pessimistic" },
-    { "clamy-feeling", "Clamy Feeling" }
+    {
+      filname: "wheres-the-buffet",
+      title: "Where's the Buffet?"
+    },
+    {
+      filname: "hot-damn",
+      title: "Hot Damn"
+    },
+    {
+      filname: "pansy-immune-system",
+      title: "Pansy Immune System"
+    },
+    {
+      filname: "upper-football",
+      title: "Upper Football"
+    },
+    {
+      filname: "william-butterfield",
+      title: "William Butterfield"
+    },
+    {
+      filname: "smooth-as-silk",
+      title: "Smooth as Silk"
+    },
+    {
+      filname: "black-metal",
+      title: "Black Metal"
+    },
+    {
+      filname: "large-can-of-beer",
+      title: "Large Can of Beer"
+    },
+    {
+      filname: "bought-a-new-part",
+      title: "Bought a New Part"
+    },
+    {
+      filname: "who-is-this",
+      title: "Who is this?"
+    },
+    {
+      filname: "futons-instead-of-pews",
+      title: "Futons Instead of Pews"
+    },
+    {
+      filname: "challenge-to-a-duel",
+      title: "Challenge to a Dual"
+    },
+    {
+      filname: "hahaha",
+      title: "Hahahaha"
+    },
+    {
+      filname: "where-you-going",
+      title: "Where You Going?"
+    },
+    {
+      filname: "pessimistic",
+      title: "Pessimistic"
+    },
+    {
+      filname: "clamy-feeling",
+      title: "Clamy Feeling"
+    }
   ];
 
   var player = $("#player").jPlayer({
