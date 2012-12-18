@@ -1,16 +1,5 @@
 $(document).ready(function() {
 
-  var Clip = Backbone.Model.extend({
-    filename: "",
-    title: ""
-  });
-
-  var ClipList = Backbone.Collection.extend({
-
-  });
-
-  var ClipView = Backbone.View.extend({
-  });
 
   var clips = [
     {
@@ -78,6 +67,33 @@ $(document).ready(function() {
       title: "Clamy Feeling"
     }
   ];
+
+  var Clip = Backbone.Model.extend({
+    filename: "",
+    title: ""
+  });
+
+  var ClipList = Backbone.Collection.extend({
+    model: Clip
+  });
+
+  var ClipView = Backbone.View.extend({
+    $el: $("#clips"),
+    template: $('#clipTemplate').html(),
+    initialize: function() {
+      this.collection = new ClipList(clips);
+      this.renderClips();
+    },
+    renderClips: function() {
+      var html = Mustache.to_html(this.template, this.model.toJSON());
+      $(this.el).html(html);
+      return this;
+    },
+    renderRow: function() {
+    },
+    renderClip: function() {
+    }
+  });
 
   var player = $("#player").jPlayer({
     preload: "auto",
