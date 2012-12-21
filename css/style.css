@@ -40,11 +40,11 @@ body {
 @media all and (min-width: 0px) and (max-width: 320px) {
   #dave-bw-2, #title-text {
     display: none;
-  }  /* show it on small screens */
+  }
 }
 
 @media all and (min-width: 321px) and (max-width: 1024px) {
   #dave-bw-2, #title-text {
     display: block;
-  }   /* hide it elsewhere */
+  }
 }
