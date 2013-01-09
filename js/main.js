@@ -87,11 +87,8 @@
       var that = this;
       $.each(this.collection.models, function(i, clip) {
         var html = Mustache.to_html(that.template, clip.toJSON());
-        console.log(html);
         $(that.el).append(html);
       });
-
-      return this;
     },
     renderRow: function() {
     },
@@ -100,7 +97,6 @@
   });
 
   var clipView = new ClipView();
-i
 
   var player = $("#player").jPlayer({
     preload: "auto",
