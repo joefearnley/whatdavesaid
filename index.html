@@ -44,26 +44,20 @@
 
     <div id="player"></div>
 
-    <!-- Example row of columns -->
-    <div id="clips" class="row-fluid">
-    </div>
-      <hr>
+    <div id="clips" class="row-fluid"></div>
+    
+    <hr>
 
     <footer>
       <p id="copyright">&copy; <a href="http://joefearnley.com">a jf joint</a> 2012</p>
     </footer>
   </div>
 
-  <script id="clipTemplate" type="text/template">
-    //{{#clipRows}}
-      {{#clips}}
-        <div class="row-fluid">
-          <div class="span3">
-            <p><a class="btn btn-default btn-large clip" href="javascript:void(0);" id="{{filename}}"><i class="icon-play"></i>{{title}}</a></p>
-          </div>
-        </div>
-      {{/clips}}
-    //{{/clipRows}}
+  <script id="clip-template" type="text/template">
+    <div class="span3">
+      <p><a class="btn btn-default btn-large clip" href="javascript:void(0);" id="{{filename}}">
+        <i class="icon-play"></i>{{title}}</a></p>
+   </div>
   </script>
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>

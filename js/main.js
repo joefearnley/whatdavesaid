@@ -1,5 +1,4 @@
-$(document).ready(function() {
-
+(function($){
 
   var clips = [
     {
@@ -78,22 +77,30 @@ $(document).ready(function() {
   });
 
   var ClipView = Backbone.View.extend({
-    $el: $("#clips"),
-    template: $('#clipTemplate').html(),
+    el: $("#clips"),
+    template: $('#clip-template').html(),
     initialize: function() {
       this.collection = new ClipList(clips);
       this.renderClips();
     },
     renderClips: function() {
-      var html = Mustache.to_html(this.template, this.model.toJSON());
-      $(this.el).html(html);
+      var that = this;
+      $.each(this.collection.models, function(i, clip) {
+        var html = Mustache.to_html(that.template, clip.toJSON());
+        console.log(html);
+        $(that.el).append(html);
+      });
+
       return this;
     },
     renderRow: function() {
     },
-    renderClip: function() {
+    renderClip: function(clip) {
     }
   });
+
+  var clipView = new ClipView();
+i
 
   var player = $("#player").jPlayer({
     preload: "auto",
@@ -134,5 +141,5 @@ $(document).ready(function() {
     //
     //return false;
   });
-});
 
+})(jQuery);
