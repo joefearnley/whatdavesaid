@@ -28,11 +28,18 @@ body {
   border: 5px #000 solid;
 }
 
-#copyright {
-  color: red;
-  text-align: center;
-}
-
 .clip {
   width: 200px;
+}
+
+@media all and (min-width: 0px) and (max-width: 320px) {
+  #dave-bw-2, #title-text {
+    display: none;
+  }
+}
+
+@media all and (min-width: 321px) and (max-width: 1024px) {
+  #dave-bw-2, #title-text {
+    display: block;
+  }
 }

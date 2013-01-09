@@ -34,5 +34,16 @@ body {
 
 .clip {
   width: 225px;
-  height: :50px;
+}
+
+@media all and (max-width: 320px) {
+  #davepic2, #title-text {
+    display: none;
+  }
+}
+
+@media all and (min-width: 321px) and (max-width: 1024px) {
+  #davepic2, #title-text {
+    display: block;
+  }
 }
