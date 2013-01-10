@@ -19,16 +19,22 @@
     renderClips: function() {
       
       var that = this;
+      var clips = [];
       $.each(this.collection.models, function(i, clip) {
-        
-        var rowOfClips[] = {};
 
-        var html = Mustache.to_html(that.template, clip.toJSON());
-        $(that.el).append(html);
+        clips.push(clip);
+
+        if((i > 0)  && (i % 3 === 0)) {
+
+          that.renderRow(clips, i);
+          clips = [];
+        }
       });
-     */
+
     },
-    renderRow: function() {
+    renderRow: function(clip, i) {
+      console.log("rendering row : " + i);
+      return;
       //
       // first render the four clips' html
       // 
@@ -40,6 +46,9 @@
       // then pass that in to the row template
       //
       // Mustache.to_html(template, html);
+      //         
+      //         var html = Mustache.to_html(that.template, clip.toJSON());
+      //         $(that.el).append(html);
       //
     },
     renderClip: function(clip) {
