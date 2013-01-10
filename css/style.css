@@ -28,6 +28,11 @@ body {
   border: 5px #000 solid;
 }
 
+#copyright {
+  color: red;
+  text-align: center;
+}
+
 .clip {
   width: 200px;
 }
