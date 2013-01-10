@@ -1,5 +1,51 @@
 (function($){
- 
+
+  var Clip = Backbone.Model.extend({
+    filename: "",
+    title: ""
+  });
+
+  var ClipList = Backbone.Collection.extend({
+    model: Clip
+  });
+
+  var ClipView = Backbone.View.extend({
+    el: $("#clips"),
+    template: $('#clip-template').html(),
+    initialize: function(options) {
+      this.collection = new ClipList(options.clips);
+      this.renderClips();
+    },
+    renderClips: function() {
+      
+      var that = this;
+      $.each(this.collection.models, function(i, clip) {
+        
+        var rowOfClips[] = {};
+
+        var html = Mustache.to_html(that.template, clip.toJSON());
+        $(that.el).append(html);
+      });
+     */
+    },
+    renderRow: function() {
+      //
+      // first render the four clips' html
+      // 
+      // var clipsHtml = '';
+      // for(clip in clips) {
+      //  html =+ renderClip(clip);
+      // }
+      // 
+      // then pass that in to the row template
+      //
+      // Mustache.to_html(template, html);
+      //
+    },
+    renderClip: function(clip) {
+    }
+  });
+
   var clips = [
     { filname: "wheres-the-buffet", title: "Where's the Buffet?" },
     { filname: "hot-damn", title: "Hot Damn" },
@@ -18,7 +64,11 @@
     { filname: "pessimistic", title: "Pessimistic" },
     { filname: "clamy-feeling", title: "Clamy Feeling" }
   ];
- 
+
+  var clipView = new ClipView({
+    clips: clips                          
+  });
+
   $(".clip").click(function() {
     var element = $(this);
     var icon = element.children("i");
