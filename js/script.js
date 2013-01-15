@@ -11,67 +11,77 @@
 
   var ClipView = Backbone.View.extend({
     el: $("#clips"),
-    template: $('#clip-template').html(),
+    template: $("#clip-template").html(),
     initialize: function(options) {
       this.collection = new ClipList(options.clips);
       this.renderClips();
     },
     renderClips: function() {
-      
-      var that = this;
+
       var clips = [];
+      var that = this;
       $.each(this.collection.models, function(i, clip) {
 
         clips.push(clip);
 
+        // its the end of the row, so render it
         if((i > 0)  && (i % 3 === 0)) {
 
-          that.renderRow(clips, i);
+          // first render the four clips' html
+          var clipsHtml = "";
+          var that = this;
+
+          $.each(clips, function(i, clip) {
+            var template = $("#clip-template").html();
+            var html = Mustache.to_html(template, clip.toJSON());
+            clipsHtml += html;
+          });
+
+          var clipsWrapper = {
+            html: clipsHtml
+          };
+
+          //console.log(clipsWrapper);
+
+          // then pass that in to the row templates
+          var template = $("#row-template").html();
+
+          var html = Mustache.to_html(template, clipsWrapper);
+
+          console.log(html);
+          //$(this.el).append(html);
+
           clips = [];
         }
       });
 
     },
-    renderRow: function(clip, i) {
-      console.log("rendering row : " + i);
-      return;
-      //
-      // first render the four clips' html
-      // 
-      // var clipsHtml = '';
-      // for(clip in clips) {
-      //  html =+ renderClip(clip);
-      // }
-      // 
-      // then pass that in to the row template
-      //
-      // Mustache.to_html(template, html);
-      //         
-      //         var html = Mustache.to_html(that.template, clip.toJSON());
-      //         $(that.el).append(html);
-      //
+    renderRow: function(clips) {
     },
-    renderClip: function(clip) {
+    renderClip: function(clipsHtml) {
+      var template = $("#clip-template").html();
+      var html = Mustache.to_html(template, clipsHtml);
+      return html;
     }
   });
 
   var clips = [
-    { filname: "wheres-the-buffet", title: "Where's the Buffet?" },
-    { filname: "hot-damn", title: "Hot Damn" },
-    { filname: "pansy-immune-system", title: "Pansy Immune System" },
-    { filname: "upper-football", title: "Upper Football" },
-    { filname: "william-butterfield", title: "William Butterfield" },
-    { filname: "smooth-as-silk", title: "Smooth as Silk" },
-    { filname: "black-metal", title: "Black Metal" },
-    { filname: "large-can-of-beer", title: "Large Can of Beer" },
-    { filname: "bought-a-new-part", title: "Bought a New Part" },
-    { filname: "who-is-this", title: "Who is this?" },
-    { filname: "futons-instead-of-pews", title: "Futons Instead of Pews" },
-    { filname: "challenge-to-a-duel", title: "Challenge to a Dual" },
-    { filname: "hahaha", title: "Hahahaha" },
-    { filname: "where-you-going", title: "Where You Going?" },
-    { filname: "pessimistic", title: "Pessimistic" },
-    { filname: "clamy-feeling", title: "Clamy Feeling" }
+    { filename: "wheres-the-buffet", title: "Where's the Buffet?" },
+    { filename: "hot-damn", title: "Hot Damn" },
+    { filename: "pansy-immune-system", title: "Pansy Immune System" },
+    { filename: "upper-football", title: "Upper Football" },
+    { filename: "william-butterfield", title: "William Butterfield" },
+    { filename: "smooth-as-silk", title: "Smooth as Silk" },
+    { filename: "black-metal", title: "Black Metal" },
+    { filename: "large-can-of-beer", title: "Large Can of Beer" },
+    { filename: "bought-a-new-part", title: "Bought a New Part" },
+    { filename: "who-is-this", title: "Who is this?" },
+    { filename: "futons-instead-of-pews", title: "Futons Instead of Pews" },
+    { filename: "challenge-to-a-duel", title: "Challenge to a Dual" },
+    { filename: "hahaha", title: "Hahahaha" },
+    { filename: "where-you-going", title: "Where You Going?" },
+    { filename: "pessimistic", title: "Pessimistic" },
+    { filename: "clamy-feeling", title: "Clamy Feeling" }
   ];
 
   var clipView = new ClipView({
