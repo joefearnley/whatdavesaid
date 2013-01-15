@@ -11,7 +11,8 @@
 
   var ClipView = Backbone.View.extend({
     el: $("#clips"),
-    template: $("#clip-template").html(),
+    clipTemplate: $("#clip-template").html(),
+    rowTemplate: $("#row-template").html(),
     initialize: function(options) {
       this.collection = new ClipList(options.clips);
       this.renderClips();
@@ -25,32 +26,21 @@
         clips.push(clip);
 
         // its the end of the row, so render it
-        if((i > 0)  && (i % 3 === 0)) {
-
+        if((i > 0)  && (i % 4 === 0)) {
+          console.log(i);
           // first render the four clips' html
           var clipsHtml = "";
-          var that = this;
 
           $.each(clips, function(i, clip) {
-            var template = $("#clip-template").html();
-            var html = Mustache.to_html(template, clip.toJSON());
+            var html = Mustache.to_html(that.clipTemplate, clip.toJSON());
             clipsHtml += html;
           });
 
-          var clipsWrapper = {
-            html: clipsHtml
-          };
-
-          //console.log(clipsWrapper);
-
           // then pass that in to the row templates
-          var template = $("#row-template").html();
+          var rowHtml = Mustache.to_html(that.rowTemplate, { html: clipsHtml });
+          $(that.el).append(rowHtml);
 
-          var html = Mustache.to_html(template, clipsWrapper);
-
-          console.log(html);
-          //$(this.el).append(html);
-
+          // clear clips array
           clips = [];
         }
       });
@@ -59,9 +49,6 @@
     renderRow: function(clips) {
     },
     renderClip: function(clipsHtml) {
-      var template = $("#clip-template").html();
-      var html = Mustache.to_html(template, clipsHtml);
-      return html;
     }
   });
 
