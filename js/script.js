@@ -1,4 +1,4 @@
-(function($){
+$(document).ready(function() {
 
   var Clip = Backbone.Model.extend({
     filename: "",
@@ -68,25 +68,26 @@
     clips: clips
   });
 
+  var player = $("#player").jPlayer({
+    swfPath: "js/jplayer",
+    supplied: "mp3"
+  });
+
   $(".clip").click(function() {
     var element = $(this);
     var icon = element.children("i");
     icon.removeClass("icon-play").addClass("icon-pause");
 
-    var player = $("#player").jPlayer({
-      swfPath: "js/jplayer",
-      supplied: "mp3"
-    });
-
     player.jPlayer("setMedia", {
       mp3: "audio/" + element.attr("id") + ".mp3"
-    });
+    }).jPlayer("play");
 
-
-    player.jPlayer("play");
-    icon.removeClass("icon-pause").addClass("icon-play");
+//    player.jPlayer("play", function() {
+//      console.log("callback being executed");
+//      icon.removeClass("icon-pause").addClass("icon-play");
+//    });
 
     return false;
   });
 
-})(jQuery);
+});
