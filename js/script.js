@@ -22,21 +22,19 @@
       var clips = [];
       var that = this;
       $.each(this.collection.models, function(i, clip) {
-
         clips.push(clip);
 
-        // its the end of the row, so render it
-        if((i > 0)  && (i % 4 === 0)) {
-          console.log(i);
-          // first render the four clips' html
-          var clipsHtml = "";
+        var index = i + 1;
+        if(index % 4 === 0) {
 
+          // render the row of clips
+          var clipsHtml = "";
           $.each(clips, function(i, clip) {
             var html = Mustache.to_html(that.clipTemplate, clip.toJSON());
             clipsHtml += html;
           });
 
-          // then pass that in to the row templates
+          // put it all together and render the row
           var rowHtml = Mustache.to_html(that.rowTemplate, { html: clipsHtml });
           $(that.el).append(rowHtml);
 
@@ -44,11 +42,6 @@
           clips = [];
         }
       });
-
-    },
-    renderRow: function(clips) {
-    },
-    renderClip: function(clipsHtml) {
     }
   });
 
@@ -72,7 +65,7 @@
   ];
 
   var clipView = new ClipView({
-    clips: clips                          
+    clips: clips
   });
 
   $(".clip").click(function() {
@@ -82,12 +75,13 @@
 
     var player = $("#player").jPlayer({
       swfPath: "js/jplayer",
-      supplied: "mp3",
+      supplied: "mp3"
     });
 
     player.jPlayer("setMedia", {
       mp3: "audio/" + element.attr("id") + ".mp3"
     });
+
 
     player.jPlayer("play");
     icon.removeClass("icon-pause").addClass("icon-play");
