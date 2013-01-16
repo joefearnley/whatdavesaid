@@ -68,24 +68,35 @@ $(document).ready(function() {
     clips: clips
   });
 
-  var player = $("#player").jPlayer({
-    swfPath: "js/jplayer",
-    supplied: "mp3"
-  });
-
   $(".clip").click(function() {
     var element = $(this);
     var icon = element.children("i");
-    icon.removeClass("icon-play").addClass("icon-pause");
+    //icon.removeClass("icon-play").addClass("icon-pause");
+
+    var player = $("#player").jPlayer({
+      swfPath: "js/jplayer",
+      supplied: "mp3",
+      playing: function() {
+        console.log("media is playing");
+        icon.removeClass("icon-play").addClass("icon-pause");
+      },
+      ended: function() {
+        console.log("media has ended");
+        icon.removeClass("icon-pause").addClass("icon-play");
+      }
+    });
 
     player.jPlayer("setMedia", {
       mp3: "audio/" + element.attr("id") + ".mp3"
     }).jPlayer("play");
 
-//    player.jPlayer("play", function() {
-//      console.log("callback being executed");
-//      icon.removeClass("icon-pause").addClass("icon-play");
-//    });
+
+    // maybe use this to trigger the css switch while the clip is playing??
+    //$.jPlayer.event.playing
+    //player.bind($.jPlayer.event.progress, function (event) {});
+
+//    console.log("callback being executed");
+//    icon.removeClass("icon-pause").addClass("icon-play");
 
     return false;
   });
