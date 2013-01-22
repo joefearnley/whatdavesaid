@@ -48,8 +48,8 @@
 <script id="clip-template" type="text/template">
   <div class="span3">
     <p>
-      <a class="btn btn-default btn-large clip" href="javascript:void(0);" id="{{ filename }}">
-        <i class="icon-play"></i> {{ title }}
+      <a class="btn btn-default btn-large clip" href="javascript;" id="{{ filename }}">
+        <i id="{{ filename }}-icon" class="icon-play"></i> {{ title }}
       </a>
     </p>
   </div>
@@ -61,8 +61,8 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/0.9.9/backbone-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/mustache.js/0.7.0/mustache.min.js"></script>
 <script src="js/libs/bootstrap/bootstrap.min.js"></script>
+<script src="js/jplayer/jquery.jplayer.min.js"></script>
 <script src="js/script.js"></script>
-<script type="text/javascript" src="js/jplayer/jquery.jplayer.min.js"></script>
 
 <script>
   var _gaq=[['_setAccount','UA-6368887-10'],['_trackPageview']];
