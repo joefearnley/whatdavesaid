@@ -70,19 +70,20 @@ $(document).ready(function() {
 
   $(".clip").click(function() {
     var element = $(this);
-    var icon = element.children("i");
-    //icon.removeClass("icon-play").addClass("icon-pause");
+    var iconSelector = "#" + element.children("i").attr("id");
+
+    console.log($(iconSelector));
 
     var player = $("#player").jPlayer({
       swfPath: "js/jplayer",
       supplied: "mp3",
       playing: function() {
         console.log("media is playing");
-        icon.removeClass("icon-play").addClass("icon-pause");
+        $(iconSelector).removeClass("icon-play").addClass("icon-pause");
       },
       ended: function() {
         console.log("media has ended");
-        icon.removeClass("icon-pause").addClass("icon-play");
+        $(iconSelector).removeClass("icon-pause").addClass("icon-play");
       }
     });
 
