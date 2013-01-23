@@ -70,20 +70,22 @@ $(document).ready(function() {
 
   $(".clip").click(function() {
     var element = $(this);
-    var iconSelector = "#" + element.children("i").attr("id");
-
-    console.log($(iconSelector));
+    //var iconSelector = "#" + element.children("i").attr("id");
+    //console.log($(iconSelector));
+    console.log("Before Player : " + element.attr("id"));
 
     var player = $("#player").jPlayer({
       swfPath: "js/jplayer",
       supplied: "mp3",
       playing: function() {
         console.log("media is playing");
-        $(iconSelector).removeClass("icon-play").addClass("icon-pause");
+        console.log(element.attr("id"));
+        element.children("i").removeClass("icon-play").addClass("icon-pause");
       },
       ended: function() {
         console.log("media has ended");
-        $(iconSelector).removeClass("icon-pause").addClass("icon-play");
+        console.log(element.attr("id"));
+        element.children("i").removeClass("icon-pause").addClass("icon-play");
       }
     });
 
