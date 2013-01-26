@@ -71,24 +71,22 @@ $(document).ready(function() {
   $(".clip").click(function() {
     var element = $(this);
     var icon = element.children("i");
+    icon.removeClass("icon-play").addClass("icon-pause");
 
     var player = $("#player").jPlayer({
       swfPath: "js/jplayer",
       supplied: "mp3"
     });
 
-    player.unbind($.jPlayer.event.playing);
-    player.unbind($.jPlayer.event.ended);
-
-
-    player.bind($.jPlayer.event.playing, function(event) {
-      console.log("media is playing");
-      icon.removeClass("icon-play").addClass("icon-pause");
+    player.bind($.jPlayer.event.playing, function() {
+        icon.removeClass("icon-play").addClass("icon-pause"); 
     });
 
     player.bind($.jPlayer.event.ended, function() {
-      console.log("media has ended");
-      icon.removeClass("icon-pause").addClass("icon-play");      
+      icon.removeClass("icon-pause").addClass("icon-play");
+      player.unbind($.jPlayer.event.playing);
+      player.unbind($.jPlayer.event.ended);
+
     });
 
     player.jPlayer("setMedia", {
