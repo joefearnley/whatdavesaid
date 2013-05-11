@@ -1,50 +1,6 @@
 
-/* ===== Primary Styles ========================================================
- * Author:
-   ========================================================================== */
 
-body {
-  padding-top: 60px;
-  padding-bottom: 40px;
-}
-
-#title {
-  font-size: 25px;
-  text-align: center;
-  font-family: 'Audiowide', cursive;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 50px;
-  text-transform: none;
-  text-decoration: none;
-  letter-spacing: 0em;
-  word-spacing: 0em;
-  line-height: 1.4;
-  color: red;
+.navbar {
   height: 200px;
 }
 
-#title img {
-  border: 5px #000 solid;
-}
-
-#copyright {
-  color: red;
-  text-align: center;
-}
-
-.clip {
-  width: 200px;
-}
-
-@media all and (min-width: 0px) and (max-width: 320px) {
-  #dave-bw-2, #title-text {
-    display: none;
-  }
-}
-
-@media all and (min-width: 321px) and (max-width: 1024px) {
-  #dave-bw-2, #title-text {
-    display: block;
-  }
-}
