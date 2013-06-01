@@ -1,5 +1,28 @@
+
+/*
+ * Main style sheet for whatdavesaid.com
+ */
+
+/*
+ * ------------------------
+ * Bootstrap override stuff
+ * ------------------------
+ */
 .navbar .container { 
-  height: 12em; 
+ /* height: 12em;*/ 
+}
+
+
+/*
+ * ------------------------
+ * Custome stuff
+ * ------------------------
+ */
+
+.navbar .dave:hover,
+.navbar .dave:focus {
+  text-decoration: none;
+  color: #dddddd;
 }
 
 .clips {
@@ -24,16 +47,11 @@
 .clips > li > a:focus,
 .clips > li > a:hover {
   color: #333333;
-
   text-decoration: none;
   background-color: transparent;
 }
 
-.player-container {
-  border: #ffffff solid 1px;
-}
-
-.pl {
+.player {
   margin-left: 20px;
   border: #ffffff solid 1px;
 }
@@ -44,20 +62,7 @@
   text-align: center;
 }
 
-.dave {
-  margin-bottom: 20px;
-  margin-left: 40px;
-  font-size: 40px;
-  color: #777777;
-}
-
-.navbar .dave:hover,
-.navbar .dave:focus {
-  text-decoration: none;
-  color: #dddddd;
-}
-
-.dave-head {
+.dave-img {
   margin-left: 40px;
 }
 
@@ -67,10 +72,4 @@ footer {
 
 footer p {
   text-align: center;
-}
-
-@media screen and (max-width: 979px)
-.navbar-fixed-top {
-  margin-bottom: 0px;
-  position: fixed;
 }
