@@ -62,8 +62,15 @@
   text-align: center;
 }
 
-.dave-img {
+.dave-header-img {
+  max-width: 100px;
+/*
+  border: #ffffff solid 1px;
+  height: 100px;
+  width: 100px;
+  background: url('../img/dave.jpg');
   margin-left: 40px;
+*/
 }
 
 footer {

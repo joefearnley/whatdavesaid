@@ -32,6 +32,9 @@ angular.module('wdsApp', [])
 
 (function ($) {
   $(".clip").click(function() {
+
+    console.log("lasdfjalskfdj");
+    /*
     var element = $(this);
     var icon = element.children("i");
     icon.removeClass("icon-play").addClass("icon-pause");
@@ -55,7 +58,7 @@ angular.module('wdsApp', [])
     player.jPlayer("setMedia", {
       mp3: "audio/" + element.attr("id") + ".mp3"
     }).jPlayer("play");
-
+*/
     return false;
   });
 }(jQuery));
