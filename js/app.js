@@ -1,10 +1,11 @@
+/*
 angular.module('wdsApp', [])
   .config(function($routeProvider) {
     $routeProvider
       .when('/', 
         {
-          controller: 'clipController'
-          //templateUrl: '../partials/clip.html'
+          controller: 'clipController',
+          templateUrl: 'partials/clip.html'
         }
       )
       .otherwise({redirectTo: '/'});
@@ -29,12 +30,46 @@ angular.module('wdsApp', [])
       { filename: "clamy-feeling", title: "Clamy Feeling" }
     ];
 });
+*/
 
 (function ($) {
-  $(".clip").click(function() {
+
+  var clips = [
+    { filename: "wheres-the-buffet", title: "Where's the Buffet?" },
+    { filename: "hot-damn", title: "Hot Damn" },
+    { filename: "pansy-immune-system", title: "Pansy Immune System" },
+    { filename: "upper-football", title: "Upper Football" },
+    { filename: "william-butterfield", title: "William Butterfield" },
+    { filename: "smooth-as-silk", title: "Smooth as Silk" },
+    { filename: "black-metal", title: "Black Metal" },
+    { filename: "large-can-of-beer", title: "Large Can of Beer" },
+    { filename: "bought-a-new-part", title: "Bought a New Part" },
+    { filename: "who-is-this", title: "Who is this?" },
+    { filename: "futons-instead-of-pews", title: "Futons Instead of Pews" },
+    { filename: "challenge-to-a-duel", title: "Challenge to a Dual" },
+    { filename: "hahaha", title: "Hahahaha" },
+    { filename: "where-you-going", title: "Where You Going?" },
+    { filename: "pessimistic", title: "Pessimistic" },
+    { filename: "clamy-feeling", title: "Clamy Feeling" }
+  ];
+
+  var clipTemplate = $("#clip-template").html();
+  var clipsElement = $("#clips");
+
+  $.each(clips, function(i, clip) {
+    var html = Mustache.to_html(clipTemplate, clip);
+    clipsElement.append(html);
+  });
+
+  $("#test").click(function() {
+    console.log("lasdfjalskfdj");
+    return false;
+  });
+
+  var clip = $(".clip").click(function() {
 
     console.log("lasdfjalskfdj");
-    /*
+/*
     var element = $(this);
     var icon = element.children("i");
     icon.removeClass("icon-play").addClass("icon-pause");
@@ -61,4 +96,6 @@ angular.module('wdsApp', [])
 */
     return false;
   });
+
+  console.log(clip);
 }(jQuery));
