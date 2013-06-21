@@ -54,6 +54,27 @@
 .player {
   margin-left: 20px;
   border: #ffffff solid 1px;
+  height: 50px;
+  width: 700px;
+  color: #ffffff;
+  background: url('../img/play.png');
+  background-repeat:no-repeat;
+}
+
+.stopped {
+  background: url('../img/play.png') no-repeat;
+}
+
+.stopped:hover {
+  background: url('../img/play-hover.png') no-repeat;
+}
+
+.playing {
+  background: url('../img/pause.png') no-repeat;
+}
+
+.playing:hover {
+  background: url('../img/pause-hover.png') no-repeat;
 }
 
 .title {

@@ -1,8 +1,8 @@
-<ul class="nav nav-list clips" ng-controller="clipController">
-  <li ng-repeat="clip in clips">
-    <a class="clip" href="javascript:void(0);" id="{{ clip.filename }}">
-      <i class="icon-play"></i> 
-      {{ clip.title }}
+<script id="clip-template" type="text/template">
+  <li>
+    <a class="clip" href="javascript:void(0);" id="{{ filename }}">
+      <i></i> 
+      {{ title }}
     </a>
   </li>
-</ul>
+</script>
