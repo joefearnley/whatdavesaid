@@ -65,12 +65,11 @@
 
     // find main player
     var p = $(".player");
-    p.addClass("stopped");
+    //p.addClass("stopped");
 
     // watch for click
     $(".clip").click(function() {
       var element = $(this);
-      var icon = element.children("i");
 
       var player = $("#player").jPlayer({
         swfPath: "js/jplayer",
@@ -78,13 +77,13 @@
       });
 
       player.bind($.jPlayer.event.playing, function() {
-        p.removeClass("stopped").addClass("playing");
+        //p.removeClass("stopped").addClass("playing");
       });
 
       player.bind($.jPlayer.event.ended, function() {
         player.unbind($.jPlayer.event.playing);
         player.unbind($.jPlayer.event.ended);
-        p.removeClass("playing").addClass("stopped");
+        //p.removeClass("playing").addClass("stopped");
       });
 
       player.jPlayer("setMedia", {
@@ -95,3 +94,19 @@
     });
   });
 }(jQuery));
+
+
+function equalize(bar) {
+
+  $(".bar").each(function(i) {
+    var hgt = Math.random() * 10;
+    hgt += 1;
+    var t = hgt * 30;
+
+    bar.animate({
+        height: hgt
+    }, t, function() {
+        equalize($(this));
+    });
+  });
+}

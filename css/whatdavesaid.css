@@ -53,12 +53,21 @@
 
 .player {
   margin-left: 20px;
-  border: #ffffff solid 1px;
-  height: 50px;
-  width: 700px;
+  height: 80px;
   color: #ffffff;
-  background: url('../img/play.png');
-  background-repeat:no-repeat;
+/*  background: url('../img/play.png') no-repeat;*/
+/*  border: 1px #fff solid;*/
+}
+
+.eq {
+  margin-left: 50px;
+}
+
+.bar {
+  background-color: green;
+  width: 5px;
+  height: 50px;
+  display: inline-block;
 }
 
 .stopped {
@@ -78,15 +87,15 @@
 }
 
 .title {
-  margin-top: 20px;
-  height: 60px;
+  margin-top: 10px;
+  height: 30px;
   text-align: center;
 }
 
 .dave-header-img {
-  max-width: 100px;
-/*
+  max-width: 80px;
   border: #ffffff solid 1px;
+/*
   height: 100px;
   width: 100px;
   background: url('../img/dave.jpg');
