@@ -67,6 +67,9 @@
     var p = $(".player");
     //p.addClass("stopped");
 
+
+     var bar = $(".bar");
+
     // watch for click
     $(".clip").click(function() {
       var element = $(this);
@@ -78,12 +81,21 @@
 
       player.bind($.jPlayer.event.playing, function() {
         //p.removeClass("stopped").addClass("playing");
+        bar.each(function(i) {
+          fluctuate($(this), player);
+        });
+
       });
 
       player.bind($.jPlayer.event.ended, function() {
-        player.unbind($.jPlayer.event.playing);
-        player.unbind($.jPlayer.event.ended);
-        //p.removeClass("playing").addClass("stopped");
+        console.log("player ended");
+        bar.each(function(i) {
+          $(this).css("height: 0px");
+        });
+
+        //player.unbind($.jPlayer.event.playing);
+        //player.unbind($.jPlayer.event.ended);
+
       });
 
       player.jPlayer("setMedia", {
@@ -95,18 +107,21 @@
   });
 }(jQuery));
 
-
-function equalize(bar) {
-
-  $(".bar").each(function(i) {
-    var hgt = Math.random() * 10;
+function fluctuate(bar, player) {
+    var hgt = Math.random() * 50;
     hgt += 1;
     var t = hgt * 30;
+
+    var ended = player.data("jPlayer").status.ended;
 
     bar.animate({
         height: hgt
     }, t, function() {
-        equalize($(this));
+      if(!ended) {
+        fluctuate($(this), player);
+      } else {
+        $(this).css("height: 0px");
+        return;
+      }
     });
-  });
 }
