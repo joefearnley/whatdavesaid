@@ -1,6 +1,3 @@
-/*
- * Author: Joe Fearnley
- */
 $(document).ready(function() {
   $(".clip").click(function() {
     var element = $(this);
