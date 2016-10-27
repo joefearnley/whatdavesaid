@@ -1,6 +1,49 @@
 
+<<<<<<< HEAD
 
 .navbar {
   height: 200px;
 }
 
+=======
+body {
+    padding-top: 60px;
+    padding-bottom: 40px;
+    background: url(../img/bg.png) repeat;
+}
+
+.title {
+    font-size: 25px;
+    text-align: center;
+    font-family: 'Audiowide', cursive;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 50px;
+    text-transform: none;
+    text-decoration: none;
+    letter-spacing: 0em;
+    word-spacing: 0em;
+    line-height: 1.4;
+    color: red;
+    height: 200px;
+}
+
+#title img {
+    border: 5px #000 solid;
+}
+
+#copyright {
+    color: red;
+    text-align: center;
+}
+
+.btn-default {
+    width: 100%;
+    padding: 20px;
+    font-size: 20px;
+}
+
+.row div {
+    margin-bottom: 30px;
+}
+>>>>>>> gh-pages

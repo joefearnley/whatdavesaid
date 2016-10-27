@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<<<<<<< HEAD
 <html ng-app="wdsApp">
   <head>
     <meta charset="utf-8">
@@ -109,4 +110,109 @@
       ga('send', 'pageview');
     </script>
   </body>
+=======
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Daveid Lee Soundboard</title>
+    <meta name="description" content="David Lee Soundboard">
+    <meta name="author" content="dave's friend joe">
+
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href='http://fonts.googleapis.com/css?family=Audiowide' rel='stylesheet' type='text/css'>
+</head>
+<body>
+
+<div class="container">
+    <div class="row title">
+        <div class="col-md-4"><img src="img/dave_bw.jpg" /></div>
+        <div class="col-md-4 hidden-xs hidden-sm">David Lee Soundboad</div>
+        <div class="col-md-4 hidden-xs hidden-sm"><img src="img/dave_bw.jpg" /></div>
+    </div>
+
+    <div id="player"></div>
+
+    <div class="row">
+      <div class="col-sm-3">
+          <button class="btn btn-default btn-large clip" data-file="wheres-the-buffet">Where's the Buffet?</button>
+      </div>
+      <div class="col-sm-3">
+          <button class="btn btn-default btn-large clip" data-file="hot-damn">Hot Damn</button>
+      </div>
+      <div class="col-sm-3">
+          <button class="btn btn-default btn-large clip" data-file="pansy-immune-system">Pansy Immune System</button>
+      </div>
+      <div class="col-sm-3">
+          <button class="btn btn-default btn-large clip" data-file="upper-football">Upper Football</button>
+      </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-3">
+            <button class="btn btn-default btn-large clip" data-file="william-butterfield">William Butterfield</button>
+        </div>
+        <div class="col-sm-3">
+            <button class="btn btn-default btn-large clip" data-file="smooth-as-silk">Smooth as Silk</button>
+        </div>
+        <div class="col-sm-3">
+            <button class="btn btn-default btn-large clip" data-file="black-metal">Black Metal</button>
+        </div>
+        <div class="col-sm-3">
+            <button class="btn btn-default btn-large clip" data-file"large-can-of-beer">Large Can of Beer</button>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-3">
+            <button class="btn btn-default btn-large clip" data-file="bought-a-new-part">Bought a New Part</button>
+        </div>
+        <div class="col-sm-3">
+            <button class="btn btn-default btn-large clip" data-file="who-is-this">Who is this?</button>
+        </div>
+        <div class="col-sm-3">
+            <button class="btn btn-default btn-large clip" data-file="futons-instead-of-pews">Futons Instead of Pews</button>
+        </div>
+        <div class="col-sm-3">
+            <button class="btn btn-default btn-large clip" data-file="challenge-to-a-duel">Challenge to a Dual</button>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-3">
+            <button class="btn btn-default btn-large clip" data-file="hahaha">Hahahaha</button>
+        </div>
+        <div class="col-sm-3">
+            <button class="btn btn-default btn-large clip" data-file="where-you-going">Where You Going?</button>
+        </div>
+        <div class="col-sm-3">
+            <button class="btn btn-default btn-large clip" data-file="pessimistic">Pessimistic</button>
+        </div>
+        <div class="col-sm-3">
+            <button class="btn btn-default btn-large clip" data-file="clamy-feeling">Clamy Feeling</button>
+        </div>
+    </div>
+    <hr>
+    <footer>
+        <p id="copyright"><a href="http://www.youtube.com/watch?v=Tjyb7MPnuj4" target="_blank">Boom</a></p>
+    </footer>
+</div>
+
+<script>
+(function() {
+    var clips = document.querySelectorAll('button.clip');
+    for (var i = 0; i < clips.length; i++) {
+        clips[i].addEventListener('click', function() {
+            var fileName = '/audio/' + this.getAttribute('data-file') + '.mp3';
+            var clip = new Audio(fileName);
+            clip.play();
+        });
+    }
+})();
+</script>
+</body>
+>>>>>>> gh-pages
 </html>
