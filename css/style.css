@@ -33,6 +33,7 @@ body {
 .btn-default {
     width: 100%;
     padding: 20px;
+    font-size: 20px;
 }
 
 .row div {

@@ -1,21 +1,9 @@
-$(document).ready(function() {
-  $(".clip").click(function() {
-    var element = $(this);
-    var icon = element.children("i");
-    icon.removeClass("icon-play").addClass("icon-pause");
 
-    var player = $("#player").jPlayer({
-      swfPath: "js/jplayer",
-      supplied: "mp3",
+document.querySelectorAll('button.clip')
+    .forEach(function(el) {
+        el.addEventListener('click', function() {
+            var fileName = '/audio/' + this.getAttribute('data-file') + '.mp3';
+            var clip = new Audio(fileName);
+            clip.play();
+        });
     });
-
-    player.jPlayer("setMedia", {
-      mp3: "audio/" + element.attr("id") + ".mp3"
-    });
-
-    player.jPlayer("play");
-    icon.removeClass("icon-pause").addClass("icon-play");
-
-    return false;
-  });
-});

@@ -25,31 +25,63 @@
     <div id="player"></div>
 
     <div class="row">
-      <div class="col-sm-3"><a class="btn btn-default btn-large" href="javascript:void(0);" id="wheres-the-buffet"><i class="icon-play"></i> Where's the Buffet?</a></div>
-      <div class="col-sm-3"><a class="btn btn-default btn-large" href="javascript:void(0);" id="hot-damn"><i class="icon-play"></i> Hot Damn</a></div>
-      <div class="col-sm-3"><a class="btn btn-default btn-large" href="javascript:void(0);" id="pansy-immune-system"><i class="icon-play"></i> Pansy Immune System</a></div>
-      <div class="col-sm-3"><a class="btn btn-default btn-large" href="javascript:void(0);" id="upper-football"><i class="icon-play"></i> Upper Football</a></div>
+      <div class="col-sm-3">
+          <button class="btn btn-default btn-large clip" data-file="wheres-the-buffet">Where's the Buffet?</button>
+      </div>
+      <div class="col-sm-3">
+          <button class="btn btn-default btn-large clip" data-file="hot-damn">Hot Damn</button>
+      </div>
+      <div class="col-sm-3">
+          <button class="btn btn-default btn-large clip" data-file="pansy-immune-system">Pansy Immune System</button>
+      </div>
+      <div class="col-sm-3">
+          <button class="btn btn-default btn-large clip" data-file="upper-football">Upper Football</button>
+      </div>
     </div>
 
     <div class="row">
-        <div class="col-sm-3"><a class="btn btn-default btn-large" href="javascript:void(0);" id="william-butterfield"><i class="icon-play"></i> William Butterfield</a></div>
-        <div class="col-sm-3"><a class="btn btn-default btn-large" href="javascript:void(0);" id="smooth-as-silk"><i class="icon-play"></i> Smooth as Silk</a></div>
-        <div class="col-sm-3"><a class="btn btn-default btn-large" href="javascript:void(0);" id="black-metal"><i class="icon-play"></i> Black Metal</a></div>
-        <div class="col-sm-3"><a class="btn btn-default btn-large" href="javascript:void(0);" id="large-can-of-beer"><i class="icon-play"></i> Large Can of Beer</a></div>
+        <div class="col-sm-3">
+            <button class="btn btn-default btn-large clip" data-file="william-butterfield">William Butterfield</button>
+        </div>
+        <div class="col-sm-3">
+            <button class="btn btn-default btn-large clip" data-file="smooth-as-silk">Smooth as Silk</button>
+        </div>
+        <div class="col-sm-3">
+            <button class="btn btn-default btn-large clip" data-file="black-metal">Black Metal</button>
+        </div>
+        <div class="col-sm-3">
+            <button class="btn btn-default btn-large clip" data-file"large-can-of-beer">Large Can of Beer</button>
+        </div>
     </div>
 
     <div class="row">
-        <div class="col-sm-3"><a class="btn btn-default btn-large" href="javascript:void(0);" id="bought-a-new-part"><i class="icon-play"></i> Bought a New Part</a></div>
-        <div class="col-sm-3"><a class="btn btn-default btn-large" href="javascript:void(0);" id="who-is-this"><i class="icon-play"></i> Who is this?</a></div>
-        <div class="col-sm-3"><a class="btn btn-default btn-large" href="javascript:void(0);" id="futons-instead-of-pews"><i class="icon-play"></i> Futons Instead of Pews</a></div>
-        <div class="col-sm-3"><a class="btn btn-default btn-large" href="javascript:void(0);" id="challenge-to-a-duel"><i class="icon-play"></i> Challenge to a Dual</a></div>
+        <div class="col-sm-3">
+            <button class="btn btn-default btn-large clip" data-file="bought-a-new-part">Bought a New Part</button>
+        </div>
+        <div class="col-sm-3">
+            <button class="btn btn-default btn-large clip" data-file="who-is-this">Who is this?</button>
+        </div>
+        <div class="col-sm-3">
+            <button class="btn btn-default btn-large clip" data-file="futons-instead-of-pews">Futons Instead of Pews</button>
+        </div>
+        <div class="col-sm-3">
+            <button class="btn btn-default btn-large clip" data-file="challenge-to-a-duel">Challenge to a Dual</button>
+        </div>
     </div>
 
     <div class="row">
-        <div class="col-sm-3"><a class="btn btn-default btn-large" href="javascript:void(0);" id="hahaha"><i class="icon-play"></i> Hahahaha</a></div>
-        <div class="col-sm-3"><a class="btn btn-default btn-large" href="javascript:void(0);" id="where-you-going"><i class="icon-play"></i> Where You Going?</a></div>
-        <div class="col-sm-3"><a class="btn btn-default btn-large" href="javascript:void(0);" id="pessimistic"><i class="icon-play"></i> Pessimistic</a></div>
-        <div class="col-sm-3"><a class="btn btn-default btn-large" href="javascript:void(0);" id="clamy-feeling"><i class="icon-play"></i> Clamy Feeling</a></div>
+        <div class="col-sm-3">
+            <button class="btn btn-default btn-large clip" data-file="hahaha">Hahahaha</button>
+        </div>
+        <div class="col-sm-3">
+            <button class="btn btn-default btn-large clip" data-file="where-you-going">Where You Going?</button>
+        </div>
+        <div class="col-sm-3">
+            <button class="btn btn-default btn-large clip" data-file="pessimistic">Pessimistic</button>
+        </div>
+        <div class="col-sm-3">
+            <button class="btn btn-default btn-large clip" data-file="clamy-feeling">Clamy Feeling</button>
+        </div>
     </div>
     <hr>
     <footer>
@@ -57,9 +89,17 @@
     </footer>
 </div>
 
-<script src="js/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/script.js"></script>
-<script type="text/javascript" src="js/jplayer/jquery.jplayer.min.js"></script>
+<script>
+(function() {
+    var clips = document.querySelectorAll('button.clip');
+    for (var i = 0; i < clips.length; i++) {
+        clips[i].addEventListener('click', function() {
+            var fileName = '/audio/' + this.getAttribute('data-file') + '.mp3';
+            var clip = new Audio(fileName);
+            clip.play();
+        });
+    }
+})();
+</script>
 </body>
 </html>
