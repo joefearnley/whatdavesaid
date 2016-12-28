@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -7,9 +8,50 @@
     <meta name="description" content="David Lee Soundboard">
     <meta name="author" content="dave's friend joe">
     <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link href='http://fonts.googleapis.com/css?family=Audiowide' rel='stylesheet' type='text/css'>
+    <style media="screen">
+        body {
+            padding-top: 60px;
+            padding-bottom: 40px;
+            background: url(../img/bg.png) repeat;
+        }
+
+        .title {
+            font-size: 25px;
+            text-align: center;
+            font-family: 'Audiowide', cursive;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 50px;
+            text-transform: none;
+            text-decoration: none;
+            letter-spacing: 0em;
+            word-spacing: 0em;
+            line-height: 1.4;
+            color: red;
+            height: 200px;
+        }
+
+        #title img {
+            border: 5px #000 solid;
+        }
+
+        #copyright {
+            color: red;
+            text-align: center;
+        }
+
+        .btn-default {
+            width: 100%;
+            padding: 20px;
+            font-size: 20px;
+        }
+
+        .row div {
+            margin-bottom: 30px;
+        }
+    </style>
 </head>
 <body>
 
@@ -83,7 +125,7 @@
 
 <script>
 (function() {
-    var baseUrl = '/whatdavesaid/';
+    var baseUrl = '/whatdavesaid/';s
     var clips = document.querySelectorAll('button.clip');
     for (var i = 0; i < clips.length; i++) {
         clips[i].addEventListener('click', function() {
