@@ -12,9 +12,8 @@
     <link href='http://fonts.googleapis.com/css?family=Audiowide' rel='stylesheet' type='text/css'>
     <style media="screen">
         body {
-            padding-top: 60px;
-            padding-bottom: 40px;
-            background: url(../img/bg.png) repeat;
+            padding: 60px 0 40px;
+            background: black;
         }
 
         .title {
@@ -26,20 +25,19 @@
             font-size: 50px;
             text-transform: none;
             text-decoration: none;
-            letter-spacing: 0em;
-            word-spacing: 0em;
+            letter-spacing: 0;
+            word-spacing: 0;
             line-height: 1.4;
             color: red;
             height: 200px;
         }
 
-        #title img {
-            border: 5px #000 solid;
+        #copyright {
+            text-align: center;
         }
 
-        #copyright {
+        #copyright a {
             color: red;
-            text-align: center;
         }
 
         .btn-default {
@@ -86,7 +84,7 @@
             <button class="btn btn-default btn-large clip" data-file="black-metal">Black Metal</button>
         </div>
         <div class="col-sm-3">
-            <button class="btn btn-default btn-large clip" data-file"large-can-of-beer">Large Can of Beer</button>
+            <button class="btn btn-default btn-large clip" data-file="large-can-of-beer">Large Can of Beer</button>
         </div>
     </div>
     <div class="row">
@@ -119,17 +117,17 @@
     </div>
     <hr>
     <footer>
-        <p id="copyright"><a href="http://www.youtube.com/watch?v=Tjyb7MPnuj4" target="_blank">Boom</a></p>
+        <p id="copyright"><a href="http://www.youtube.com/watch?v=Tjyb7MPnuj4" target="_blank">KaBoom</a></p>
     </footer>
 </div>
 
 <script>
 (function() {
-    var baseUrl = '/whatdavesaid/';s
+    var baseUrl = window.location.hostname === 'localhost' ? '/' : '/whatdavesaid';
     var clips = document.querySelectorAll('button.clip');
     for (var i = 0; i < clips.length; i++) {
         clips[i].addEventListener('click', function() {
-            var fileName = baseUrl + '/audio/' + this.getAttribute('data-file') + '.mp3';
+            var fileName = baseUrl + 'audio/' + this.getAttribute('data-file') + '.mp3';
             var clip = new Audio(fileName);
             clip.play();
         });
