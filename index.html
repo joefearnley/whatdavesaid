@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -7,9 +8,48 @@
     <meta name="description" content="David Lee Soundboard">
     <meta name="author" content="dave's friend joe">
     <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link href='http://fonts.googleapis.com/css?family=Audiowide' rel='stylesheet' type='text/css'>
+    <style media="screen">
+        body {
+            padding: 60px 0 40px;
+            background: black;
+        }
+
+        .title {
+            font-size: 25px;
+            text-align: center;
+            font-family: 'Audiowide', cursive;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 50px;
+            text-transform: none;
+            text-decoration: none;
+            letter-spacing: 0;
+            word-spacing: 0;
+            line-height: 1.4;
+            color: red;
+            height: 200px;
+        }
+
+        #copyright {
+            text-align: center;
+        }
+
+        #copyright a {
+            color: red;
+        }
+
+        .btn-default {
+            width: 100%;
+            padding: 20px;
+            font-size: 20px;
+        }
+
+        .row div {
+            margin-bottom: 30px;
+        }
+    </style>
 </head>
 <body>
 
@@ -44,7 +84,7 @@
             <button class="btn btn-default btn-large clip" data-file="black-metal">Black Metal</button>
         </div>
         <div class="col-sm-3">
-            <button class="btn btn-default btn-large clip" data-file"large-can-of-beer">Large Can of Beer</button>
+            <button class="btn btn-default btn-large clip" data-file="large-can-of-beer">Large Can of Beer</button>
         </div>
     </div>
     <div class="row">
@@ -77,17 +117,17 @@
     </div>
     <hr>
     <footer>
-        <p id="copyright"><a href="http://www.youtube.com/watch?v=Tjyb7MPnuj4" target="_blank">Boom</a></p>
+        <p id="copyright"><a href="http://www.youtube.com/watch?v=Tjyb7MPnuj4" target="_blank">KaBoom</a></p>
     </footer>
 </div>
 
 <script>
 (function() {
-    var baseUrl = '/whatdavesaid/';
+    var baseUrl = window.location.hostname === 'localhost' ? '/' : '/whatdavesaid';
     var clips = document.querySelectorAll('button.clip');
     for (var i = 0; i < clips.length; i++) {
         clips[i].addEventListener('click', function() {
-            var fileName = baseUrl + '/audio/' + this.getAttribute('data-file') + '.mp3';
+            var fileName = baseUrl + 'audio/' + this.getAttribute('data-file') + '.mp3';
             var clip = new Audio(fileName);
             clip.play();
         });
